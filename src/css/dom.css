@@ -1,0 +1,84 @@
+:root {
+  --app-default-font: sans-serif;
+  --app-default-size: 16px;
+  --app-primary-color: #0000ff;
+  --app-warn-color: #ff0000;
+
+  --app-input-title-width: 10ch;
+  font: var(--app-default-font);
+  font-size: var(--app-default-font-size);
+}
+.app-cmp-main {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: min(460px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+:is(.app-cl-primary, .app-cl-warn) {
+  font-weight: bold;
+  cursor: pointer;
+  &:disabled {
+    opacity: 0.25;
+  }
+}
+.app-cl-primary {
+  color: var(--app-primary-color);
+}
+
+.app-cl-warn {
+  color: var(--app-warn-color);
+}
+
+.app-cl-cmd {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 8px;
+  & > * {
+    pointer-events: none;
+  }
+}
+
+.app-cmp-input {
+  display: flex;
+  flex-direction: row;
+  & > label {
+    flex: 1 0 auto;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: baseline;
+    & > * {
+      box-sizing: border-box;
+      height: 100%;
+    }
+    & > input {
+      flex: 1 0 auto;
+    }
+  }
+}
+
+.app-cmp-input-title {
+  display: inline-block;
+  flex-direction: row;
+  align-items: baseline;
+  width: var(--app-input-title-width);
+
+  & > .app-elem-input-title-no {
+    margin-left: auto;
+    margin-right: 1ch;
+  }
+}
+
+.app-cmp-section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 50px;
+  margin-right: 50px;
+}
